@@ -339,8 +339,33 @@ button { color: inherit; }
 
   .slide--photo img,
   .slide--final > img {
+    display: block;
+    width: calc(100% - clamp(100px, 12vw, 190px));
+    height: calc(100% - 150px);
+    margin: 75px auto;
     object-fit: contain;
     object-position: center;
+  }
+
+  .slide--memory {
+    padding: 75px clamp(50px, 7vw, 110px) 110px;
+  }
+
+  .slide--memory img {
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    max-height: calc(100vh - 185px);
+  }
+
+  .photo-copy,
+  .final-copy {
+    bottom: 82px;
+  }
+
+  .photo-copy h2,
+  .final-copy h2 {
+    font-size: clamp(58px, 6.5vw, 104px);
   }
 }
 
