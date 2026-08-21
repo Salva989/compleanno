@@ -1,22 +1,41 @@
 const slider = document.querySelector("#slider");
 const slides = [...document.querySelectorAll(".slide")];
-const dots = [...document.querySelectorAll(".dot")];
 const counter = document.querySelector("#currentSlide");
+const totalSlides = document.querySelector("#totalSlides");
+const dotsContainer = document.querySelector("#dots");
 const previousButton = document.querySelector("#previousButton");
 const nextButton = document.querySelector("#nextButton");
 const calendarButton = document.querySelector("#calendarButton");
+const brand = document.querySelector(".brand");
 
 let currentIndex = 0;
 
+totalSlides.textContent = String(slides.length).padStart(2, "0");
+slides.forEach((_, index) => {
+  const dot = document.createElement("button");
+  dot.className = `dot${index === 0 ? " is-active" : ""}`;
+  dot.dataset.slide = index;
+  dot.setAttribute("aria-label", `Vai alla slide ${index + 1}`);
+  dotsContainer.append(dot);
+});
+const dots = [...document.querySelectorAll(".dot")];
+
 function goToSlide(index) {
   const nextIndex = Math.max(0, Math.min(slides.length - 1, index));
-  slides[nextIndex].scrollIntoView({ behavior: "smooth", inline: "start" });
+  slider.scrollTo({ left: nextIndex * slider.clientWidth, behavior: "smooth" });
 }
 
 function updateNavigation(index) {
   currentIndex = index;
   counter.textContent = String(index + 1).padStart(2, "0");
   dots.forEach((dot, dotIndex) => dot.classList.toggle("is-active", dotIndex === index));
+  const activeDot = dots[index];
+  if (activeDot) {
+    dotsContainer.scrollTo({
+      left: activeDot.offsetLeft - dotsContainer.clientWidth / 2 + activeDot.clientWidth / 2,
+      behavior: "smooth"
+    });
+  }
   previousButton.disabled = index === 0;
   nextButton.disabled = index === slides.length - 1;
 }
@@ -35,6 +54,10 @@ slides.forEach((slide) => observer.observe(slide));
 dots.forEach((dot) => dot.addEventListener("click", () => goToSlide(Number(dot.dataset.slide))));
 previousButton.addEventListener("click", () => goToSlide(currentIndex - 1));
 nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
+brand.addEventListener("click", (event) => {
+  event.preventDefault();
+  goToSlide(0);
+});
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") goToSlide(currentIndex + 1);
