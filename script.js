@@ -53,7 +53,7 @@ calendarButton.addEventListener("click", () => {
     `DTSTART:${format(start)}`, `DTEND:${format(end)}`,
     "SUMMARY:Compleanno — tema Eurospin",
     "LOCATION:Viale Rodi 84, Bicocca, Milano",
-    "DESCRIPTION:Ti aspetto! Dress code: Eurospin.",
+    "DESCRIPTION:Ti aspetto! Tema della festa: Eurospin.",
     "END:VEVENT", "END:VCALENDAR"
   ].join("\r\n");
 
