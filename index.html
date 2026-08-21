@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffe900" />
+    <meta name="description" content="Invito di compleanno — 5 settembre, ore 20, Viale Rodi 84, Bicocca." />
+    <title>5 settembre — ci sei?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="invite" aria-label="Invito di compleanno">
+      <header class="topbar">
+        <a class="brand" href="#slide-1" aria-label="Torna all'inizio">
+          <span class="brand-mark">5/9</span>
+          <span>SUPER<br />PARTY</span>
+        </a>
+        <p class="counter"><span id="currentSlide">01</span> / 04</p>
+      </header>
+
+      <div class="slider" id="slider">
+        <section class="slide slide--intro" id="slide-1" aria-label="Invito">
+          <div class="burst" aria-hidden="true">WOW!</div>
+          <div class="intro-copy">
+            <p class="eyebrow">OFFERTA A TEMPO LIMITATO</p>
+            <h1>È IL MIO<br /><span>COMPLEANNO!</span></h1>
+            <p class="intro-note">E tu sei ufficialmente invitato/a.</p>
+          </div>
+          <div class="date-card">
+            <p>SETTEMBRE</p>
+            <strong>05</strong>
+            <span>ORE 20:00</span>
+          </div>
+          <p class="swipe-hint">Scorri per i dettagli <span>→</span></p>
+        </section>
+
+        <section class="slide slide--photo" id="slide-2" aria-label="Foto e data">
+          <img src="IMG_1844.JPG" alt="Foto del festeggiato" />
+          <div class="photo-shade"></div>
+          <p class="sticker sticker--yellow">PRESENZA<br />CONSIGLIATA</p>
+          <div class="photo-copy">
+            <p class="eyebrow">SEGNA SUL CALENDARIO</p>
+            <h2>5 SETTEMBRE<br /><span>ORE 20</span></h2>
+          </div>
+        </section>
+
+        <section class="slide slide--theme" id="slide-3" aria-label="Tema della festa">
+          <div class="receipt" aria-hidden="true">
+            <div class="receipt-logo">EURO<span>SPIN</span></div>
+            <p>SCONTRINO N. 0509</p>
+            <div class="receipt-line"></div>
+            <p>1 × FESTA MEMORABILE</p>
+            <p>1 × OUTFIT A TEMA</p>
+            <p>∞ × DIVERTIMENTO</p>
+            <div class="receipt-line"></div>
+            <p class="receipt-total">TOTALE: NON PUOI MANCARE</p>
+          </div>
+          <div class="theme-copy">
+            <p class="eyebrow">IL DRESS CODE CHE NON TI ASPETTI</p>
+            <h2>TEMA:<br /><span>EUROSPIN</span></h2>
+            <p>Vestiti come se fossi la miglior offerta del volantino.</p>
+          </div>
+          <div class="price-badge" aria-label="Prezzo: priceless">
+            <small>PREZZO</small>
+            <strong>€ 0,00</strong>
+            <span>PRICELESS</span>
+          </div>
+        </section>
+
+        <section class="slide slide--final" id="slide-4" aria-label="Luogo e azioni">
+          <img src="IMG_1042.JPG" alt="Foto con amici" />
+          <div class="photo-shade photo-shade--heavy"></div>
+          <div class="final-copy">
+            <p class="eyebrow">DOVE CI TROVIAMO</p>
+            <h2>VIALE RODI<br /><span>84</span></h2>
+            <p class="district">BICOCCA · MILANO · ORE 20</p>
+            <div class="actions">
+              <a class="button button--primary" href="https://www.google.com/maps/search/?api=1&query=Viale+Rodi+84+Milano" target="_blank" rel="noreferrer">APRI LA MAPPA ↗</a>
+              <button class="button button--secondary" id="calendarButton" type="button">SALVA LA DATA +</button>
+            </div>
+            <p class="closing">Ti aspetto. Niente scuse, solo convenienza.</p>
+          </div>
+        </section>
+      </div>
+
+      <nav class="slider-nav" aria-label="Navigazione delle slide">
+        <button class="arrow" id="previousButton" type="button" aria-label="Slide precedente">←</button>
+        <div class="dots" id="dots" aria-label="Seleziona una slide">
+          <button class="dot is-active" data-slide="0" aria-label="Vai alla slide 1"></button>
+          <button class="dot" data-slide="1" aria-label="Vai alla slide 2"></button>
+          <button class="dot" data-slide="2" aria-label="Vai alla slide 3"></button>
+          <button class="dot" data-slide="3" aria-label="Vai alla slide 4"></button>
+        </div>
+        <button class="arrow" id="nextButton" type="button" aria-label="Slide successiva">→</button>
+      </nav>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
