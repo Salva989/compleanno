@@ -331,6 +331,19 @@ button { color: inherit; }
 @keyframes garland-exit { to { transform: translateY(-125%); } }
 @keyframes flag-swing { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
 
+@media (min-width: 701px) {
+  .slide--photo,
+  .slide--final {
+    background: var(--ink);
+  }
+
+  .slide--photo img,
+  .slide--final > img {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
 @media (max-width: 700px) {
   .topbar { padding: 14px 16px; }
   .brand-mark { width: 40px; height: 40px; }
@@ -339,7 +352,15 @@ button { color: inherit; }
   .date-card { align-self: flex-end; width: 170px; min-width: 0; padding: 14px; }
   .date-card strong { font-size: 86px; }
   .burst { top: 16%; right: 6%; width: 70px; font-size: 14px; }
-  .swipe-hint { left: 22px; bottom: 27px; }
+  .swipe-hint {
+    left: 22px;
+    bottom: 82px;
+    padding: 8px 11px;
+    background: var(--ink);
+    color: white;
+    font-size: 13px;
+    box-shadow: 5px 5px 0 var(--red);
+  }
   .slide--photo img { object-position: 44% center; }
   .photo-shade { background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.05) 70%); }
   .photo-copy, .final-copy { left: 22px; right: 22px; bottom: 112px; }
