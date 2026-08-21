@@ -22,7 +22,7 @@ const dots = [...document.querySelectorAll(".dot")];
 
 function goToSlide(index) {
   const nextIndex = Math.max(0, Math.min(slides.length - 1, index));
-  slider.scrollTo({ left: nextIndex * slider.clientWidth, behavior: "smooth" });
+  slides[nextIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
 }
 
 function updateNavigation(index) {
